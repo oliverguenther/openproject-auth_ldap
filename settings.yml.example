@@ -1,0 +1,8 @@
+localhost:
+  name: "ldap"
+  host: 'localhost'
+  port: 389
+  base: 'dc=example, dc=com'
+  display_name: "LDAP"
+  filter: '(cn=%{username})'
+  uid: 'uid'
