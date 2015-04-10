@@ -8,10 +8,16 @@ Add the following entries to your `Gemfile.plugins` in your OpenProject (4.0+) r
 
 	gem 'openproject-auth_plugins', :git => 'https://github.com/opf/openproject-auth_plugins', :branch => 'stable'
 	gem "openproject-auth_ldap", :git => 'https://github.com/hostsharing/openproject-auth_ldap', :branch => 'stable'
+	
+**Note:** OpenProject 4.0+ requires net-ldap for the internal LDAP authentication scheme. If you use this plugin and run ``bundle install``, bundler will fail to find compatible version, as net-ldap required from the omniauth-ldap gem is rather outdated. To avoid this, create a ``Gemfile.local`` file with my fork of the omniauth-ldap gem:
+
+
+    gem 'omniauth-ldap', :git => 'https://github.com/oliverguenther/omniauth-ldap'
+	
 
 ## Requirements
 
-* [omniauth-ldap gem](https://github.com/intridea/omniauth-ldap) ~> 1.0.4
+* [My fork of the omniauth-ldap gem](https://github.com/oliverguenther/omniauth-ldap) ~> 1.0.4
 * [OpenProject](http://openproject.org) >= 4.0
 * [openproject-auth](https://github.com/opf/openproject-auth_plugins)
 
